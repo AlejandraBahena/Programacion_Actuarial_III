@@ -4,6 +4,7 @@
 
 #### Programacion_Actuarial_III
 Primavera 2016
+<<<<<<< HEAD
 
 Historia Académica
 
@@ -27,3 +28,7 @@ Historia Académica
 * Teoría de Ecuaciones: 8
 * Formación Humana y Social: 9 
 * Programación Actuarial II: 9 
+=======
+Â¡HOLA!
+Â¿CÃ³mo estÃ¡s?
+>>>>>>> origin/master
