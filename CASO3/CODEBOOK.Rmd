@@ -109,13 +109,13 @@ tBodyGyroJerkMean
 ####Transformaciones
 Las siguientes transformaciones son las que se han aplicado a la base de datos original:
 
-#####* Une los datos de test con los de training, para crear un solo conjunto de datos
+##### * Une los datos de test con los de training, para crear un solo conjunto de datos
 Los datos de test y los de training se juntaron. En la versión original se encuentran divididos en dos archivos.
 
-#####* Extrae únicamente las medidas de media y desviación estándar de cada medición
+##### * Extrae únicamente las medidas de media y desviación estándar de cada medición
 Solo se dejaron las medidas de media y desviación estándar. Lo cual significa que de los 561 datos en el vector, se redujeron a 66.
 
-#####* Usa nombres de actividad para describir los nombres de las actividades en la base de datos
+##### * Usa nombres de actividad para describir los nombres de las actividades en la base de datos
 Se agregaron a la base de datos los voluntarios y las actividades. El voluntario es un entero entre 1 - 30 y la actividad es el vector que describe 6 actividades:
 
 * WALKING
@@ -125,14 +125,14 @@ Se agregaron a la base de datos los voluntarios y las actividades. El voluntario
 * STANDING
 * LAYING
 
-#####* Coloca etiquetas apropiadas en la base de datos con nombres de variables que las describan
+##### * Coloca etiquetas apropiadas en la base de datos con nombres de variables que las describan
 Las columnas se volvieron a nombrar para volverlas entendibles. 
 Se utilizó el siguiente patrón:
 
 * Nombre original: tBodyGyroJerk-mean()-X
 * Nuevo nombre: MeanOfTimeBodyGyroJearkMeanX
 
-#####* Con los datos del paso 4, crea una segunda base de datos independiente con el promedio de cada variable para cada actividad y cada sujeto.
+##### * Con los datos del paso 4, crea una segunda base de datos independiente con el promedio de cada variable para cada actividad y cada sujeto.
 Todos los valores son promedios, agregados 30 voluntarios y 6 actividades , por lo tanto, el conjunto de datos resultante es de 180 filas por 68 columnas .
 
 
