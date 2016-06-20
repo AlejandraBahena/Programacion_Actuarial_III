@@ -61,57 +61,78 @@ fBodyGyroJerkMag
 El conjunto de variables que se estimaron a partir de estas señales son:
 
 mean(): Mean value/
+
 std(): Standard deviation
+
 mad(): Median absolute deviation
+
 max(): Largest value in array
+
 min(): Smallest value in array
+
 sma(): Signal magnitude area
+
 energy(): Energy measure. Sum of the squares divided by the number of values.
+
 iqr(): Interquartile range
+
 entropy(): Signal entropy
+
 arCoeff(): Autorregresion coefficients with Burg order equal to 4
+
 correlation(): correlation coefficient between two signals
+
 maxInds(): index of the frequency component with largest magnitude
+
 meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+
 skewness(): skewness of the frequency domain signal
+
 kurtosis(): kurtosis of the frequency domain signal
-bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window. angle(): Angle between to vectors.
+
+bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window. 
+
+angle(): Angle between to vectors.
 
 Vectores adicionales obtenidos mediante las señales en una muestra de ventana de señal. Son utilizados en la variable angle():
 
 gravityMean
+
 tBodyAccMean
+
 tBodyAccJerkMean
+
 tBodyGyroMean
+
 tBodyGyroJerkMean
 
 ####Transformaciones
 Las siguientes transformaciones son las que se han aplicado a la base de datos original:
 
-#####*Une los datos de test con los de training, para crear un solo conjunto de datos
+#####* Une los datos de test con los de training, para crear un solo conjunto de datos
 Los datos de test y los de training se juntaron. En la versión original se encuentran divididos en dos archivos.
 
-#####*Extrae únicamente las medidas de media y desviación estándar de cada medición
+#####* Extrae únicamente las medidas de media y desviación estándar de cada medición
 Solo se dejaron las medidas de media y desviación estándar. Lo cual significa que de los 561 datos en el vector, se redujeron a 66.
 
-#####*Usa nombres de actividad para describir los nombres de las actividades en la base de datos
+#####* Usa nombres de actividad para describir los nombres de las actividades en la base de datos
 Se agregaron a la base de datos los voluntarios y las actividades. El voluntario es un entero entre 1 - 30 y la actividad es el vector que describe 6 actividades:
 
-WALKING
-WALKING_UPSTAIRS
-WALKING_DOWNSTAIRS
-SITTING
-STANDING
-LAYING
+* WALKING
+* WALKING_UPSTAIRS
+* WALKING_DOWNSTAIRS
+* SITTING
+* STANDING
+* LAYING
 
-#####*Coloca etiquetas apropiadas en la base de datos con nombres de variables que las describan
+#####* Coloca etiquetas apropiadas en la base de datos con nombres de variables que las describan
 Las columnas se volvieron a nombrar para volverlas entendibles. 
 Se utilizó el siguiente patrón:
 
 * Nombre original: tBodyGyroJerk-mean()-X
 * Nuevo nombre: MeanOfTimeBodyGyroJearkMeanX
 
-#####*Con los datos del paso 4, crea una segunda base de datos independiente con el promedio de cada variable para cada actividad y cada sujeto.
+#####* Con los datos del paso 4, crea una segunda base de datos independiente con el promedio de cada variable para cada actividad y cada sujeto.
 Todos los valores son promedios, agregados 30 voluntarios y 6 actividades , por lo tanto, el conjunto de datos resultante es de 180 filas por 68 columnas .
 
 
