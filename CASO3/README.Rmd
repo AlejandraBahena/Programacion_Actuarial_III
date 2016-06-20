@@ -1,0 +1,67 @@
+---
+title: "README"
+author: "Alejandra Bahena"
+date: "19 de junio de 2016"
+output: html_document
+---
+
+#Benemérita Universidad Autónoma de Puebla
+##Facultad de Ciencias Físico Matemáticas
+###Licenciatura en Actuaría
+
+####Caso 3: Reconocimiento de Actividad Humana en Celulares
+El propósito de este proyecto es demostrar tu habilidad para recolectar, trabajar y limpiar base de datos.
+El objetivo es preparar un conjunto ordenado de información que pueda ser trabajado en análisis posteriores.
+
+####Información de la Base de Datos
+Una descripción de la base de datos y su forma de creación puede ser encontrada en la siguiente liga: 
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+Los datos pueden ser descargados de la siguiente liga:
+https://www.dropbox.com/s/j26ksrw1jzqz2a1/getdata-projectfilesUCI%20HAR%20Dataset.zip?dl=0
+
+####Archivos en el caso
+El proyecto contiene los siguintes archivos:
+* ./datasets/UCI HAR Dataset
+* README.md: Descripción de los pasos para hacer el análisis.
+* CodeBook.md: Aparecen todas las variables, la base de datos y las transformaciones se realizaron.
+* run_analysis.R: Código que hace el análisis.
+
+####Análisis de la Base de Datos
+Para realizar el análisis se debe de correr el código coreer_analisis.R. 
+El análisis hará lo siguinete:
+1. Une los datos de test con los de training, para crear un solo conjunto de datos.
+2. Extrae únicamente las medidas de media y desviación estándar de cada medición.
+3. Usa nombres de actividad para describir los nombres de las actividades en la base de datos. 
+4. Coloca etiquetas apropiadas en la base de datos con nombres de variables que las describan.
+5. Con los datos del paso 4, crea una segunda base de datos independiente con el promedio de cada variable para cada actividad y cada sujeto.
+
+####Funcionamiento de código 
+El código "correr_analisis.R" hace lo siguiente:
+
+#####*Declarar las direcciones
+Une los datos de test con los de training, para crear un solo conjunto de datos
+Primero, todas las direcciones de los archivos que tienen que unirse deben de declararse. Esto se encuentra en la primera parte del código.
+
+Donde primero declaramos el directorio donde vamos a estar trabajando, para posteriormente ingresar a los datos de test y a los de training.
+Después, creamos un solo conjunto de datos, al cual llamaremos "data_set" que es con el que estaremos trabajando a lo largo del código.
+
+#####*Extracción de medidas
+Extrae únicamente las medidas de media y desviación estándar de cada medición.
+En esta parte ingresamos al archivo "features.txt" para obtener los encabezados de "data_set"
+Como nos interesa extraer únicamente las medidas de media y desviación estándar de cada medición utilizaremos "grepl" que se encarga de buscar coincidencias respecto a un argumento o patrón, en este caso nuestro patrón es "'-(mean|std)\\('".
+Para finalizar con este paso, actualizamos estas medidas seleccionadas para que aparezcan en "data_set".
+
+#####*Etiquetas apropiadas
+Coloca etiquetas apropiadas en la base de datos con nombres de variables que las describan
+Nos saltamos al paso 4 porque primero necesitamos nombrar cada columna en nuestra base de datos.
+
+#####*Nombres de actividades
+Usa nombres de actividad para describir los nombres de las actividades en la base de datos
+Primero, declaramos la dirección para obtener "actividades_train" y "actividades_test", después tomamos los argumentos y combinamos por filas.
+Notemos que en el experimento se vieron 6 diferentes actividades, las cuales utilizaremos para describir los nombres en la base de datos.
+
+#####*Promedio de cada variable
+Con los datos del paso 4, crea una segunda base de datos independiente con el promedio de cada variable para cada actividad y cada sujeto.
+Ahora nos interesamos en la dirección que nos lleva a los voluntarios, los cuales son 30 en total. Combinamos por filas y después actualizamos "data_set" para que aparezcan los voluntarios como columna.
+Por último, utilizamos el paquete "dplyr" que nos ayudara a manipular nuesta data facilmente. Creamos nuestra segunda base de datos donde vendrán los promedios de cada variable para cada actividad y cada voluntario.
+Y creamos un archivo llamado "tidy_data_set.txt" donde aparecerá la base de datos ordenada.
