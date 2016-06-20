@@ -30,9 +30,13 @@ El proyecto contiene los siguintes archivos:
 Para realizar el análisis se debe de correr el código coreer_analisis.R. 
 El análisis hará lo siguinete:
 1. Une los datos de test con los de training, para crear un solo conjunto de datos.
+
 2. Extrae únicamente las medidas de media y desviación estándar de cada medición.
-3. Usa nombres de actividad para describir los nombres de las actividades en la base de datos. 
+
+3. Usa nombres de actividad para describir los nombres de las actividades en la base de datos.
+
 4. Coloca etiquetas apropiadas en la base de datos con nombres de variables que las describan.
+
 5. Con los datos del paso 4, crea una segunda base de datos independiente con el promedio de cada variable para cada actividad y cada sujeto.
 
 ####Funcionamiento de código 
