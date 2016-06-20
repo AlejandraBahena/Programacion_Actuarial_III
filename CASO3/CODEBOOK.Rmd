@@ -23,7 +23,8 @@ La base de datos contiene:
 * Sus etiquetas de actividades.
 * Un identificador del voluntario que participó en el experimento.
 
-Las señales fueron utilizadas para estimar variables del vector para cada patrón: '-XYZ' es utilizado para denotar señales de 3 ejes en direcciones X, Y y Z.
+######Las señales fueron utilizadas para estimar variables del vector para cada patrón: '-XYZ' es utilizado para denotar señales de 3 ejes en direcciones X, Y y Z.
+
 tBodyAcc-XYZ
 
 tGravityAcc-XYZ
@@ -58,7 +59,7 @@ fBodyGyroMag
 
 fBodyGyroJerkMag
 
-El conjunto de variables que se estimaron a partir de estas señales son:
+######El conjunto de variables que se estimaron a partir de estas señales son:
 
 mean(): Mean value/
 
@@ -94,7 +95,7 @@ bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of e
 
 angle(): Angle between to vectors.
 
-Vectores adicionales obtenidos mediante las señales en una muestra de ventana de señal. Son utilizados en la variable angle():
+######Vectores adicionales obtenidos mediante las señales en una muestra de ventana de señal. Son utilizados en la variable angle():
 
 gravityMean
 
